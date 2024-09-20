@@ -162,4 +162,5 @@ cython_debug/
 #.idea/
 
 #generate csv file and csv files
+generate.py
 *.csv
