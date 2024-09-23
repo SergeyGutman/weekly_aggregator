@@ -14,9 +14,9 @@
 8. Веб-сервер airflow будет доступен по [http://localhost:8080/](http://localhost:8080/).
 9. Логин и пароль: admin admin.
 10. В admin/connections создайте новое соединение с параметрами:
-- Connection Id  spark-conn
-- Connection Type  Spark
-- Host spark://spark-master
+- Connection: Id  spark-conn
+- Connection Type:  Spark
+- Host: spark://spark-master
 - Port: 7077
 11. Запустите задачу sparking-flow
   
