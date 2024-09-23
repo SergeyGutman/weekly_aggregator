@@ -4,7 +4,7 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 
 dag = DAG(
-    dag_id = "sparking_flow",
+    dag_id = "dag_weekly_aggr",
     default_args = {
         "owner": "Sergey Gutman",
         "start_date": airflow.utils.dates.days_ago(1)
