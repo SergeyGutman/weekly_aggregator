@@ -21,7 +21,7 @@ start = PythonOperator(
 scala_aggregator = SparkSubmitOperator(
     task_id="scala_aggregator",
     conn_id="spark-conn",
-    application="src/main/scala/target/scala-2.12/csvaggregator_2.12-0.1.jar",
+    application="/opt/airflow/src/main/scala/target/scala-2.12/csvaggregator_2.12-0.1.jar",
     dag=dag
 )
 
