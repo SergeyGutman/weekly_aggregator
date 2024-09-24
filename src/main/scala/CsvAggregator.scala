@@ -12,9 +12,9 @@ object Aggregator {
       .getOrCreate()
       
 
-    val inputPath = "input/"
-    val intermediatePath = "intermediate/"
-    val outputPath = "output/"
+    val inputPath = "/opt/airflow/input/"
+    val intermediatePath = "/opt/airflow/intermediate/"
+    val outputPath = "/opt/airflow/output/"
     val dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd")
 
     // Получаем текущую дату
