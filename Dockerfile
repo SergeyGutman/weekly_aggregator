@@ -11,5 +11,4 @@ USER airflow
 
 # Установите совместимые версии провайдеров
 RUN pip install --upgrade pip
-RUN pip install apache-airflow-providers-apache-spark==3.0.0 pyspark
-
+RUN pip install apache-airflow==2.7.1 apache-airflow-providers-apache-spark==3.0.0 pyspark
