@@ -3,7 +3,12 @@ version: '3'
 x-spark-common: &spark-common
   image: bitnami/spark:latest
   volumes:
-    - ./src:/opt/bitnami/spark/src
+    - ${AIRFLOW_PROJ_DIR:-.}/input:/opt/airflow/input
+    - ${AIRFLOW_PROJ_DIR:-.}/output:/opt/airflow/output
+    - ${AIRFLOW_PROJ_DIR:-.}/intermediate:/opt/airflow/intermediate
+    - ${AIRFLOW_PROJ_DIR:-.}/src:/opt/airflow/src
+    - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
   networks:
     - new_net
 
@@ -14,12 +19,12 @@ x-airflow-common: &airflow-common
   env_file:
     - airflow.env
   volumes:
-    - ./input:/opt/airflow/input
-    - ./output:/opt/airflow/output
-    - ./intermediate:/opt/airflow/intermediate
-    - ./src:/opt/airflow/src
-    - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR:-.}/input:/opt/airflow/input
+    - ${AIRFLOW_PROJ_DIR:-.}/output:/opt/airflow/output
+    - ${AIRFLOW_PROJ_DIR:-.}/intermediate:/opt/airflow/intermediate
+    - ${AIRFLOW_PROJ_DIR:-.}/src:/opt/airflow/src
+    - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
   depends_on:
     - postgres
   networks:
