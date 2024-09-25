@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get clean
 # Установите переменную окружения JAVA_HOME
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
-ENV PATH $PATH:$JAVA_HOME/bin  
+ENV PATH="$JAVA_HOME/bin:$PATH"
 USER airflow
 
 # Установите совместимые версии провайдеров
