@@ -164,4 +164,3 @@ cython_debug/
 venv
 logs
 __pycache__
-*.csv
